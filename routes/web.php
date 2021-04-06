@@ -24,3 +24,8 @@ Route::get('/home', [App\Http\Controllers\HomeController::class, 'index'])->name
 Route::get('/admin/register', [App\http\Controllers\AdminController::class, 'ShowAdminRegister'])->name('admin.register');
 Route::get('/admin/login', [App\http\Controllers\AdminController::class, 'ShowAdminLogin'])->name('admin.login');
 Route::get('/admin/dashboard', [App\http\Controllers\AdminController::class, 'ShowAdminDashboard'])->name('admin.dashboard');
+
+
+
+
+Route::resource('variant', 'App\Http\Controllers\VariantController');
