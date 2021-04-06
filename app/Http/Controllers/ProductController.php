@@ -43,11 +43,13 @@ class ProductController extends Controller
             'title' => ['required', 'unique:variants'],
         ]);
 
-        Product::create([
+        $product = Product::create([
             'title' => $request->title,
             'sku' => Str::slug($request->title),
             'description' => $request->descrip,
         ]);
+
+        $product->addMedia($request->product_img)->toMediaCollection('product_images');
 
         return redirect()->route('product.index');
     }
