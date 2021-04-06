@@ -7,8 +7,10 @@
             <div class="card">
                 <div class="card-body">
                     <h2>
-                    <a href="{{ route('variant.index') }}" class="btn btn-primary btn-sm text-right"></i>Back</a>Create new Variant</h2>
-                    <form action="{{ route('variant.store') }}" method="POST">
+                        <a href="{{ route('product.index') }}" class="btn btn-primary btn-sm text-right"></i>Back</a>
+                        Create new Product</h2>
+                   
+                    <form action="{{ route('product.store') }}" method="POST">
                         @csrf
                         <div class="form-group">
                             <label for="">Title</label>

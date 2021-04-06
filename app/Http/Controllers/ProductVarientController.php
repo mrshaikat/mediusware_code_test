@@ -2,11 +2,9 @@
 
 namespace App\Http\Controllers;
 
-use App\Models\Product;
 use Illuminate\Http\Request;
-use Illuminate\Support\Str;
 
-class ProductController extends Controller
+class ProductVarientController extends Controller
 {
     /**
      * Display a listing of the resource.
@@ -15,10 +13,7 @@ class ProductController extends Controller
      */
     public function index()
     {
-        $data = Product::all();
-        return view('admin.pages.product.index', [
-            'all_variant'  => $data
-        ]);
+        //
     }
 
     /**
@@ -28,7 +23,7 @@ class ProductController extends Controller
      */
     public function create()
     {
-        return view('admin.pages.product.create');
+        //
     }
 
     /**
@@ -39,17 +34,7 @@ class ProductController extends Controller
      */
     public function store(Request $request)
     {
-        $this->validate($request, [
-            'title' => ['required', 'unique:variants'],
-        ]);
-
-        Product::create([
-            'title' => $request->title,
-            'sku' => Str::slug($request->title),
-            'description' => $request->descrip,
-        ]);
-
-        return redirect()->route('product.index');
+        //
     }
 
     /**

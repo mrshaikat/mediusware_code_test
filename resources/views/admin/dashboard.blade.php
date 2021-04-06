@@ -5,7 +5,7 @@
     <div class="card">
         <div class="card-header">
             <h4 class="card-title">All Product
-                <a href="#" class="btn btn-primary btn-sm text-right"></i>Product</a>
+                <a href="{{ route('product.index') }}" class="btn btn-primary btn-sm text-right"></i>Product</a>
                 <a href="{{ route('variant.index') }}" class="btn btn-primary btn-sm text-left"></i>Variant</a>
             </h4>
             

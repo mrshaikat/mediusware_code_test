@@ -7,8 +7,8 @@
             <div class="col-md-12">
         <div class="card">
             <div class="card-header">
-                <h4 class="card-title">All Product Varient
-                    <a class=" btn btn-sm btn-info" href="{{ route('variant.create') }}"></i> Add Variant</a>
+                <h4 class="card-title">All Product
+                    <a class=" btn btn-sm btn-info" href="{{ route('product.create') }}"></i> Add Product</a>
                     <a class=" btn btn-sm btn-primary" href="{{ route('admin.dashboard') }}"></i> Dashboard</a>
                    
                 </h4>
@@ -21,7 +21,7 @@
                 <table class="table table-striped">
                     <thead>
                         <tr>
-                            <th>#</th>
+                            <th>SL</th>
                             <th>Title</th>
                             <th>Description</th>
                             <th>Date</th>
@@ -34,7 +34,9 @@
                             <tr>
                                 <td>{{ $loop -> index + 1 }}</td>
                                 <td>{{ $variant -> title }}</td>
-                                <td>{!! Str::of(htmlspecialchars_decode( $variant -> description)) -> words(15) !!}</td>
+                                <td>
+                                    {!! Str::of(htmlspecialchars_decode( $variant -> description)) -> words(15) !!}
+                                </td>
                                 <td>{{ $variant -> created_at ->  diffForHumans() }}</td>
                             
                                 <td>
