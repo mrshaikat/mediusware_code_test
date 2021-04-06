@@ -28,7 +28,7 @@
                                 </label><br>
 
                                 <label>
-                                    <input type="checkbox" name="p_variant[]" value="sm"> green
+                                    <input type="checkbox" name="p_variant[]" value="xl"> sm
                                 </label><br>
 
                                 <label>

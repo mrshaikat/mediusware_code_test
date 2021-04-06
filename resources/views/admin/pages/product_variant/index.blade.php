@@ -21,21 +21,33 @@
                 <table class="table table-striped">
                     <thead>
                         <tr>
-                            <th>#</th>
-                            <th>Title</th>
-                            <th>Description</th>
+                            <th>SL</th>
+                            <th>Product Variant</th>
+                          
                             <th>Date</th>
                            
                             <th>Action</th>
                         </tr>
                     </thead>
                     <tbody>
-                       @foreach ($all_variant as $variant)
+                       @foreach ($all_variant as $aa_variant)
+                       @php
+                       $featured = json_decode($aa_variant -> variant);
+                      @endphp
+										
                             <tr>
                                 <td>{{ $loop -> index + 1 }}</td>
-                                <td>{{ $variant -> title }}</td>
-                                <td>{!! Str::of(htmlspecialchars_decode( $variant -> description)) -> words(15) !!}</td>
-                                <td>{{ $variant -> created_at ->  diffForHumans() }}</td>
+                                <td>
+                                   
+                                    @foreach ( $featured -> product_variant as $all_variant)
+                                  
+                                            {{ $all_variant  }} /
+                                    
+                                    @endforeach
+                                    
+                                </td>
+                                
+                                <td>{{ $aa_variant -> created_at ->  diffForHumans() }}</td>
                             
                                 <td>
                                 

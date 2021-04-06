@@ -46,10 +46,14 @@ class ProductVarientController extends Controller
     public function store(Request $request)
     {
 
+        $feature_data = [
+            'product_variant'  => $request->p_variant,
+        ];
+
 
 
         Product_varient::create([
-            'variant' => json_encode($request->p_variant),
+            'variant' => json_encode($feature_data),
             'product_id' => json_encode($request->product_id),
             'variant_id' => json_encode($request->variant_id),
         ]);
