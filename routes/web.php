@@ -35,3 +35,6 @@ Route::resource('product', 'App\Http\Controllers\ProductController');
 
 //Product Variant
 Route::resource('product-variant', 'App\Http\Controllers\ProductVarientController');
+
+//Product Variant Price
+Route::resource('product-variant-price', 'App\Http\Controllers\ProductVariantPriceController');
