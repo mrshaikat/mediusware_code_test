@@ -8,4 +8,6 @@ use Illuminate\Database\Eloquent\Model;
 class Product_varient extends Model
 {
     use HasFactory;
+
+    protected $guarded = [];
 }

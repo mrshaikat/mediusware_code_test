@@ -2,6 +2,9 @@
 
 namespace App\Http\Controllers;
 
+use App\Models\Product;
+use App\Models\Product_varient;
+use App\Models\Variant;
 use Illuminate\Http\Request;
 
 class ProductVarientController extends Controller
@@ -13,7 +16,10 @@ class ProductVarientController extends Controller
      */
     public function index()
     {
-        //
+        $data = Product_varient::all();
+        return view('admin.pages.product_variant.index', [
+            'all_variant'  => $data
+        ]);
     }
 
     /**
@@ -23,7 +29,12 @@ class ProductVarientController extends Controller
      */
     public function create()
     {
-        //
+        $product = Product::all();
+        $variant = Variant::all();
+        return view('admin.pages.product_variant.create', [
+            'all_product' => $product,
+            'all_variant' => $variant
+        ]);
     }
 
     /**
@@ -34,7 +45,17 @@ class ProductVarientController extends Controller
      */
     public function store(Request $request)
     {
-        //
+
+
+
+        Product_varient::create([
+            'variant' => json_encode($request->p_variant),
+            'product_id' => json_encode($request->product_id),
+            'variant_id' => json_encode($request->variant_id),
+        ]);
+
+
+        return redirect()->route('product-variant.index');
     }
 
     /**
