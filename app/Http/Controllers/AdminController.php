@@ -15,4 +15,9 @@ class AdminController extends Controller
     {
         return view('admin.login');
     }
+
+    public function ShowAdminDashboard()
+    {
+        return view('admin.dashboard');
+    }
 }
